@@ -9,25 +9,6 @@ export default function App() {
     setModalVisible(!modalVisible)
   }
 
-  const handleBackPress = () => {
-    if(modalVisible){
-      setModalVisible(false)
-      return true
-    }
-    return false
-  }
-
-  useEffect(() => {
-    if(modalVisible){
-      BackHandler.addEventListener('hardwareBackPress', handleBackPress)
-    } else {
-      BackHandler.removeEventListener('hardwareBackPress', handleBackPress)
-    }
-    
-    return () => {
-      
-    }
-  }, [modalVisible])
 
   return (
     <View style={styles.container}>
